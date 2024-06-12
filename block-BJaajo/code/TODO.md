@@ -7,7 +7,6 @@ console.log('First');
 setTimeout(() => console.log('Second'), 0);
 console.log('Third');
 ```
-
 2.
 
 ```js
@@ -19,7 +18,6 @@ setTimeout(secondCall, 2000); // execute this code after 1000 ms
 setTimeout(() => console.log('Third'), 0); // execute this code after 1000 ms
 console.log('Third');
 ```
-
 3.
 
 ```js
@@ -31,7 +29,11 @@ setTimeout(secondCall, 1000); // execute this code after 1000 ms
 setTimeout(() => console.log('Third'), 0);
 console.log('Fourth');
 ```
-
+First
+ Fourth
+undefined
+ Third
+ Second
 4.
 
 ```js
@@ -43,6 +45,11 @@ setTimeout(secondCall, 1000); // execute this code after 1000 ms
 setTimeout(() => console.log('Third'), 0);
 console.log('Fourth');
 ```
+First
+ Fourth
+undefined
+ Third
+ Second
 
 5. What will be the output of the code below and why? Also write the timing of the output starting with 0 ms.
 
@@ -61,12 +68,11 @@ setTimeout(function exec() {
 runWhileLoopForNSeconds(3);
 console.log('Third');
 ```
-
 6. Convert the synchronous code given below into asynchronous. If you execute this code it will print one, two and three. Change the code in such a way that it should print `one`, `three` and `two`. You are not allowed to move the code up and down.
 
 ```js
 console.log('one');
-console.log('two');
+setTimeout(()=>{console.log('two')},0) ;
 console.log('three');
 ```
 
@@ -74,7 +80,7 @@ console.log('three');
 
 ```js
 console.log('one');
-console.log('two');
+setTimeout(()=>{console.log('two')},0) ;
 console.log('three');
 ```
 
@@ -82,8 +88,11 @@ console.log('three');
 
 ```js
 funciton asyncForEach(){
-  //
+  console.log('one');
+  setTimeout(()=>{console.log('1','2','3')},0);
+  console.log('three');
 }
+asyncForEach()
 //  Output of the function below should be
 // one
 // three
@@ -105,9 +114,15 @@ Convert the code below in such way that the output should be the one below
 <!-- First Call -->
 <!-- Last Call -->
 <!-- 1, 2, 3, 4, 5 -->
-
+```js
+funciton asyncForEach(){
+  console.log('one');
+  setTimeout(()=>{console.log('1','2','3')},0);
+  console.log('three');
+}
+```
 ```js
 console.log('First Call');
-[1, 2, 3, 4, 5].firEach((num) => console.log(num));
+[1, 2, 3, 4, 5].f0rEach((num) => console.log(num));
 console.log('Last Call');
 ```
