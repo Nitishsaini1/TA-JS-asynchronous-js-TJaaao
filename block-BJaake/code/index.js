@@ -39,7 +39,9 @@ function createUi(data) {
       image.src = eachNews.imageUrl;
       figure.append(image);
       let postInfo = document.createElement("div");
+
       postInfo.classList.add("post-info");
+
       let postCategory = document.createElement("div");
       postCategory.innerText = userInput;
       postCategory.classList.add("post-category");
