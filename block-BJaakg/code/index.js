@@ -104,8 +104,7 @@ function fetchData(url, callBack) {
     .then((data) => {
       callBack(data);
       console.log(data);
-    }
-    )
+    })
     .catch((error) => {
       return error;
     })
